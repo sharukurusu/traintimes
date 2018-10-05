@@ -17,11 +17,11 @@ $(document).ready(function(){
         $("#trainForm").slideToggle(200)
         document.getElementById("trainForm").reset()
     })
+    
     // form submit click event
     $("#trainForm").submit(function(event){
         event.preventDefault()
         $("#trainForm").slideToggle(200)
-        // $("#toggleForm").css("display", "initial")
 
         var name = $("#name").val().trim(),
             destination = $("#destination").val().trim(),
@@ -32,6 +32,7 @@ $(document).ready(function(){
         // resets the form fields
         document.getElementById("trainForm").reset()
         
+        // adds stuff to firebase
         database.ref().push({
             name: name,
             destination: destination,
@@ -45,8 +46,7 @@ $(document).ready(function(){
         $(this).children().slideToggle(200)
     })
     
-// Name, Destination, Frequency(min), Next Arrival, Minutes Away
-
+// Populates #allTheTrains with train info dropdowns from database
     database.ref().on("child_added", function(childSnapshot) {
         var name = childSnapshot.val().name,
             destination = childSnapshot.val().destination,
@@ -61,8 +61,7 @@ $(document).ready(function(){
             // Next Train
             nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
-            console.log("Got something from database")
-
+            // builds dropdown
             newTrain = $("<div class='train'>" + "⬇️" + "Name: " + name + "</div>")
             newTrain.append($("<p>").text("Destination: " + destination))
             newTrain.append($("<p>").text("Frequency(mins): " + frequency))
