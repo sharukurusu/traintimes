@@ -1,0 +1,64 @@
+/* FIXED CONTENT */
+body {
+    background: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+#toggleForm {
+    background: darkred;
+    border: 1px solid white;
+    padding: .2em;
+}
+#toggleForm:hover{
+    background: rgb(199, 0, 0)
+}
+
+#trainForm {
+    background: darkred;
+    display: none;
+    border: 1px solid white;
+}
+
+span {
+    display: inline-block;
+}
+
+input {
+    margin: .25em;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/* input[type=text]  {
+    width:90%;
+} */
+
+/* #frequencyHours {
+    width:50%;
+} */
+/* 
+#frequencyMins {
+    width:50%;
+} */
+/* DYNAMIC CONTENT */
+
+.train {
+    border: 2px solid lightgrey;
+    background: lightseagreen;
+    padding: .2em;
+}
+
+.train:hover {
+    background: rgb(45, 240, 230);
+}
+
+.train p {
+    display: none;
+    border-top: 1px solid lightgrey;
+}
