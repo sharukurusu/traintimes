@@ -17,7 +17,7 @@ $(document).ready(function(){
         $("#trainForm").slideToggle(200)
         document.getElementById("trainForm").reset()
     })
-    
+
     // form submit click event
     $("#trainForm").submit(function(event){
         event.preventDefault()
@@ -65,7 +65,7 @@ $(document).ready(function(){
             newTrain = $("<div class='train'>" + "⬇️" + "Name: " + name + "</div>")
             newTrain.append($("<p>").text("Destination: " + destination))
             newTrain.append($("<p>").text("Frequency(mins): " + frequency))
-            newTrain.append($("<p>").text("Arrival Time: " + moment(nextTrain).format("hh:mm")))
+            newTrain.append($("<p>").text("Arrival Time: " + moment(nextTrain).format("hh:mm A")))
             newTrain.append($("<p>").text("Minutes Until Next Train: " + tMinutesTillTrain))
 
             $("#allTheTrains").prepend(newTrain)
