@@ -65,25 +65,11 @@ $(document).ready(function(){
 
             newTrain = $("<div class='train'>" + "⬇️" + "Name: " + name + "</div>")
             newTrain.append($("<p>").text("Destination: " + destination))
+            newTrain.append($("<p>").text("Frequency(mins): " + frequency))
             newTrain.append($("<p>").text("Arrival Time: " + moment(nextTrain).format("hh:mm")))
             newTrain.append($("<p>").text("Minutes Until Next Train: " + tMinutesTillTrain))
 
             $("#allTheTrains").prepend(newTrain)
     })
 
-    // Updates page when new child occurs in database
-    // database.ref().on("child_added", function(childSnapshot) {
-    //     var name = childSnapshot.val().name,
-    //         destination = childSnapshot.val().destination,
-    //         firstTrainTime = moment(childSnapshot.val().firstTrainTime, "X").format("MM/DD/YYYY"),
-    //         monthsWorked = moment().diff(firstTrainTime, "months"),
-    //         frequency = childSnapshot.val().frequency,
-    //         newRow = $("<tr>").append("<th scope='row'>" + name + "</th>")
-    //         newRow.append("<td>" + destination + "</td>")
-    //         newRow.append("<td>" + firstTrainTime + "</td>")
-    //         newRow.append("<td>" + monthsWorked + "</td>")
-    //         newRow.append("<td>$" + frequency + "</td>")
-    //         newRow.append("<td>$" + (monthsWorked * frequency) + "</td>")
-    //     $("#tbody").append(newRow)
-    // })
 })
